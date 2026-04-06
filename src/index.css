@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@100..900&display=swap');
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Outfit", sans-serif;
+  
+  --color-brand-bg: #0A0A0A;
+  --color-brand-surface: #141414;
+  --color-brand-olive: #A3B19B;
+  --color-brand-paper: #F5F2ED;
+  --color-brand-ink: #0A0A0A;
+  --color-brand-beige: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-paper font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass-nav {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 242, 237, 0.05);
+}
+
+.product-card-shadow {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(44, 44, 44, 0.05);
+}
+
+.product-card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(138, 154, 134, 0.15);
+  border-color: rgba(138, 154, 134, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-olive);
+  border-radius: 10px;
+}

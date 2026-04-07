@@ -21,18 +21,18 @@ export const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex items-center justify-center px-6">
+    <div className="min-h-screen bg-brand-bg flex items-center justify-center px-4 sm:px-6 py-24">
       <div className="max-w-md w-full">
         <div className="text-center mb-12">
           <span className="text-brand-olive uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Secure Access</span>
-          <h1 className="text-5xl font-serif text-brand-paper mb-4">Admin Login</h1>
+          <h1 className="text-4xl sm:text-5xl font-serif text-brand-paper mb-4">Admin Login</h1>
           <p className="text-brand-paper/40 text-sm font-light">Enter your credentials to access the Exelus console.</p>
         </div>
 
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="bg-brand-surface border border-brand-paper/5 rounded-[2.5rem] p-10 shadow-2xl"
+          className="bg-brand-surface border border-brand-paper/5 rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl"
         >
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-2">
@@ -77,7 +77,7 @@ export const AdminLogin = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-brand-olive text-brand-ink py-5 rounded-2xl text-xs uppercase tracking-[0.3em] font-black shadow-xl shadow-brand-olive/10 hover:bg-white transition-colors"
+              className="w-full bg-brand-olive text-brand-ink py-4 sm:py-5 rounded-2xl text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] font-black shadow-xl shadow-brand-olive/10 hover:bg-white transition-colors"
             >
               Authenticate
             </motion.button>

@@ -3,15 +3,15 @@ import { motion } from 'motion/react';
 
 export const About = () => {
   return (
-    <div className="pt-40 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
+    <div className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <div className="relative">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-brand-paper/10"
+              className="aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-brand-paper/10"
             >
               <img 
                 src="/1.jpeg" 
@@ -30,27 +30,27 @@ export const About = () => {
               </p>
             </motion.div>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
+              <span className="uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
                 Our Story
               </span>
-              <h2 className="text-4xl md:text-7xl font-serif leading-tight text-brand-paper">
+              <h2 className="text-3xl sm:text-4xl md:text-7xl font-serif leading-tight text-brand-paper">
                 Ethical Beauty, <br />
                 <span className="italic opacity-80">Proven Results</span>
               </h2>
             </motion.div>
-            <p className="text-brand-paper/70 leading-relaxed text-lg">
+            <p className="text-brand-paper/70 leading-relaxed text-base md:text-lg">
               Founded in 2022, Exelus was born from a desire to simplify skincare without sacrificing luxury or efficacy. We believe that what you put on your skin should be as clean as what you put in your body.
             </p>
             <p className="text-brand-paper/70 leading-relaxed">
               Our products are formulated in small batches in our California lab, ensuring the highest potency and freshness. Every ingredient is ethically sourced and dermatologically tested for all skin types.
             </p>
-            <div className="grid grid-cols-2 gap-8 pt-8">
+            <div className="grid sm:grid-cols-2 gap-6 md:gap-8 pt-6 md:pt-8">
               <div className="space-y-2">
                 <h4 className="font-serif text-2xl text-brand-paper">Cruelty Free</h4>
                 <p className="text-xs text-brand-paper/50 uppercase tracking-widest font-bold">Leaping Bunny Certified</p>
@@ -64,7 +64,7 @@ export const About = () => {
         </div>
 
         {/* Values Section */}
-        <div className="mt-48 grid md:grid-cols-3 gap-16">
+        <div className="mt-24 md:mt-48 grid md:grid-cols-3 gap-12 md:gap-16">
           <div className="text-center space-y-6">
             <div className="text-5xl font-serif text-brand-olive italic">01</div>
             <h3 className="text-2xl font-serif text-brand-paper">Transparency</h3>

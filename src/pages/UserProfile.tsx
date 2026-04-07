@@ -29,17 +29,17 @@ export const UserProfile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-bg pt-40 pb-24 px-6">
+    <div className="min-h-screen bg-brand-bg pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-16 space-y-8 md:space-y-0">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-10 md:mb-16 gap-8">
           <div className="flex flex-col md:flex-row items-center md:items-end space-y-6 md:space-y-0 md:space-x-8">
             <div className="w-32 h-32 rounded-full bg-brand-surface border border-brand-paper/10 flex items-center justify-center text-brand-olive shadow-2xl">
               <User size={64} strokeWidth={1} />
             </div>
             <div className="text-center md:text-left">
               <span className="text-brand-olive uppercase tracking-[0.3em] text-[10px] font-bold mb-2 block">Member Profile</span>
-              <h1 className="text-5xl font-serif text-brand-paper mb-2">{user.name}</h1>
-              <p className="text-brand-paper/40 text-sm">{user.email}</p>
+              <h1 className="text-3xl sm:text-5xl font-serif text-brand-paper mb-2 break-words">{user.name}</h1>
+              <p className="text-brand-paper/40 text-sm break-all">{user.email}</p>
             </div>
           </div>
           <button
@@ -58,7 +58,7 @@ export const UserProfile = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-brand-surface p-8 rounded-[2.5rem] border border-brand-paper/5 hover:border-brand-olive/20 transition-all group cursor-pointer"
+            className="bg-brand-surface p-6 sm:p-8 rounded-3xl md:rounded-[2.5rem] border border-brand-paper/5 hover:border-brand-olive/20 transition-all group cursor-pointer"
             >
               <div className="flex items-start justify-between">
                 <div className="space-y-4">
@@ -76,13 +76,13 @@ export const UserProfile = () => {
           ))}
         </div>
 
-        <div className="mt-16 p-12 rounded-[3rem] bg-brand-surface/50 border border-brand-paper/5 text-center">
+        <div className="mt-10 md:mt-16 p-6 sm:p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] bg-brand-surface/50 border border-brand-paper/5 text-center">
           <h3 className="text-2xl font-serif text-brand-paper mb-4">Exelus Rewards</h3>
           <p className="text-brand-paper/40 text-sm mb-8 max-w-md mx-auto">
             You have <span className="text-brand-olive font-bold">450 points</span>. 
             Redeem them for exclusive products and early access to new collections.
           </p>
-          <button className="bg-brand-olive text-brand-ink px-12 py-4 rounded-full text-[10px] uppercase tracking-[0.3em] font-black hover:bg-white transition-all">
+          <button className="bg-brand-olive text-brand-ink px-8 sm:px-12 py-4 rounded-full text-[10px] uppercase tracking-[0.24em] sm:tracking-[0.3em] font-black hover:bg-white transition-all">
             View Rewards
           </button>
         </div>

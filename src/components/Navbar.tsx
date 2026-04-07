@@ -54,25 +54,25 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-brand-bg/95 backdrop-blur-xl z-[70] p-12 flex flex-col items-center"
+            className="fixed inset-0 bg-brand-bg/95 backdrop-blur-xl z-[70] px-4 py-8 sm:p-12 flex flex-col items-center overflow-y-auto"
           >
             <button 
               onClick={() => setIsSearchOpen(false)}
-              className="absolute top-12 right-12 text-brand-paper/40 hover:text-brand-olive transition-colors"
+              className="absolute top-6 right-6 sm:top-12 sm:right-12 text-brand-paper/40 hover:text-brand-olive transition-colors"
             >
               <X size={32} />
             </button>
 
-            <div className="w-full max-w-3xl mt-24">
+            <div className="w-full max-w-3xl mt-20 sm:mt-24">
               <div className="relative">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-brand-olive" size={24} />
+                <Search className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 text-brand-olive" size={22} />
                 <input
                   autoFocus
                   type="text"
                   placeholder="Search our collection..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-brand-surface border border-brand-paper/10 rounded-[2rem] py-6 pl-16 pr-8 text-2xl font-serif text-brand-paper focus:border-brand-olive outline-none transition-all shadow-2xl"
+                  className="w-full bg-brand-surface border border-brand-paper/10 rounded-3xl sm:rounded-[2rem] py-4 sm:py-6 pl-12 sm:pl-16 pr-5 sm:pr-8 text-xl sm:text-2xl font-serif text-brand-paper focus:border-brand-olive outline-none transition-all shadow-2xl"
                 />
               </div>
 
@@ -80,7 +80,7 @@ export const Navbar = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-12 space-y-6"
+                  className="mt-8 sm:mt-12 space-y-6"
                 >
                   <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-paper/30 ml-4">Suggested Products</span>
                   <div className="grid gap-4">
@@ -88,7 +88,7 @@ export const Navbar = () => {
                       <button
                         key={product.id}
                         onClick={() => navigate(`/product/${product.id}`)}
-                        className="flex items-center space-x-6 p-4 rounded-3xl bg-brand-surface/50 border border-brand-paper/5 hover:border-brand-olive/20 transition-all group text-left"
+                        className="flex items-center gap-4 sm:gap-6 p-3 sm:p-4 rounded-3xl bg-brand-surface/50 border border-brand-paper/5 hover:border-brand-olive/20 transition-all group text-left"
                       >
                         <div className="w-16 h-16 rounded-xl overflow-hidden bg-brand-bg border border-brand-paper/10">
                           <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
@@ -113,22 +113,22 @@ export const Navbar = () => {
 
       <nav className={cn(
         "w-full transition-all duration-500",
-        isScrolled ? "glass-nav py-4 shadow-sm" : "bg-transparent py-6"
+        isScrolled ? "glass-nav py-3 md:py-4 shadow-sm" : "bg-transparent py-4 md:py-6"
       )}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-2xl font-serif tracking-widest uppercase text-brand-olive font-bold">
           Exelus
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden lg:flex items-center space-x-6 xl:space-x-10">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               to={link.href}
               className={cn(
-                "text-sm uppercase tracking-widest font-medium transition-colors relative group",
+                "text-xs xl:text-sm uppercase tracking-widest font-medium transition-colors relative group",
                 location.pathname === link.href ? "text-brand-olive" : "text-brand-paper/70 hover:text-brand-olive"
               )}
             >
@@ -142,7 +142,7 @@ export const Navbar = () => {
         </div>
 
         {/* Icons */}
-        <div className="flex items-center space-x-8 md:space-x-10">
+        <div className="flex items-center space-x-4 sm:space-x-6 md:space-x-8">
           <button 
             onClick={() => setIsSearchOpen(true)}
             className="text-brand-paper/70 hover:text-brand-olive transition-colors p-1"
@@ -176,7 +176,7 @@ export const Navbar = () => {
             )}
           </button>
           <button 
-            className="md:hidden text-brand-paper/70 hover:text-brand-olive transition-colors p-1"
+            className="lg:hidden text-brand-paper/70 hover:text-brand-olive transition-colors p-1"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu size={24} strokeWidth={1.5} />
@@ -193,7 +193,7 @@ export const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-brand-bg z-[60] flex flex-col p-8"
+            className="fixed inset-0 bg-brand-bg z-[60] flex flex-col p-6 sm:p-8 overflow-y-auto"
           >
             <div className="flex justify-between items-center mb-12">
               <span className="text-2xl font-serif tracking-widest uppercase text-brand-olive font-bold">Exelus</span>
@@ -201,13 +201,13 @@ export const Navbar = () => {
                 <X size={24} strokeWidth={1.5} />
               </button>
             </div>
-            <div className="flex flex-col space-y-8">
+            <div className="flex flex-col space-y-6 sm:space-y-8">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   to={link.href}
                   className={cn(
-                    "text-2xl font-serif transition-colors",
+                    "text-2xl sm:text-3xl font-serif transition-colors",
                     location.pathname === link.href ? "text-brand-olive" : "text-brand-paper hover:text-brand-olive"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}

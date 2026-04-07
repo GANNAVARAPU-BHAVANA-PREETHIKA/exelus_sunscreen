@@ -49,24 +49,24 @@ const testimonials = [
 
 export const Reviews = () => {
   return (
-    <div className="pt-40 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
+    <div className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 md:mb-24">
+          <span className="uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
             Community Love
           </span>
-          <h2 className="text-4xl md:text-7xl font-serif text-brand-paper mb-6">Real Stories, <br /><span className="italic opacity-80">Real Results</span></h2>
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-serif text-brand-paper mb-6 leading-tight">Real Stories, <br /><span className="italic opacity-80">Real Results</span></h2>
           <p className="text-brand-paper/60 max-w-2xl mx-auto">Join thousands of satisfied customers who have transformed their skin with Exelus science-backed rituals.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((t, idx) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-brand-surface p-10 rounded-[2.5rem] shadow-sm relative border border-brand-paper/5 hover:border-brand-olive/20 transition-colors group"
+              className="bg-brand-surface p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-sm relative border border-brand-paper/5 hover:border-brand-olive/20 transition-colors group"
             >
               <Quote className="absolute top-8 right-8 text-brand-olive/10 group-hover:text-brand-olive/20 transition-colors" size={48} />
               <div className="flex items-center space-x-4 mb-8">

@@ -21,7 +21,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       className="group cursor-pointer"
       onClick={() => navigate(`/product/${product.id}`)}
     >
-      <div className="relative aspect-[3/4] overflow-hidden rounded-[100px] bg-brand-surface mb-6 border border-brand-paper/5">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] sm:rounded-[80px] lg:rounded-[100px] bg-brand-surface mb-5 md:mb-6 border border-brand-paper/5">
         <img 
           src={product.image} 
           alt={product.name}
@@ -35,7 +35,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             e.stopPropagation();
             addToCart(product);
           }}
-          className="absolute bottom-4 right-4 bg-brand-olive text-brand-ink p-3 rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-white hover:text-brand-olive z-10"
+          className="absolute bottom-4 right-4 bg-brand-olive text-brand-ink p-3 rounded-full shadow-lg opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-white hover:text-brand-olive z-10"
         >
           <Plus size={20} />
         </button>
@@ -61,7 +61,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <span className="text-[10px] text-brand-paper/50 ml-1">({product.reviews})</span>
         </div>
         
-        <h3 className="text-lg font-serif text-brand-paper group-hover:text-brand-olive transition-colors flex items-center justify-between">
+        <h3 className="text-lg font-serif text-brand-paper group-hover:text-brand-olive transition-colors flex items-center justify-between gap-3">
           {product.name}
           <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
         </h3>

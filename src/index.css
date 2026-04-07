@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
 
 @theme {
   --font-serif: "Cormorant Garamond", serif;
@@ -14,8 +14,18 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  html,
+  body,
+  #root {
+    @apply min-w-0;
+  }
+
   body {
-    @apply bg-brand-bg text-brand-paper font-sans antialiased;
+    @apply bg-brand-bg text-brand-paper font-sans antialiased overflow-x-hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {

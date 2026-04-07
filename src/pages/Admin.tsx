@@ -128,21 +128,21 @@ export const Admin = () => {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-brand-bg px-6 pb-24">
+    <div className="pt-24 min-h-screen bg-brand-bg px-4 sm:px-6 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
           <div>
             <span className="text-brand-olive uppercase tracking-[0.3em] text-[10px] font-bold mb-2 block">Management</span>
-            <h1 className="text-5xl font-serif text-brand-paper">Admin Console</h1>
+            <h1 className="text-3xl sm:text-5xl font-serif text-brand-paper">Admin Console</h1>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex bg-brand-surface p-1 rounded-full border border-brand-paper/5">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="flex max-w-full overflow-x-auto bg-brand-surface p-1 rounded-full border border-brand-paper/5">
               {(['dashboard', 'products', 'orders'] as AdminTab[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all ${
+                  className={`px-4 sm:px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all whitespace-nowrap ${
                     activeTab === tab 
                       ? 'bg-brand-olive text-brand-ink' 
                       : 'text-brand-paper/40 hover:text-brand-paper'
@@ -189,7 +189,7 @@ export const Admin = () => {
 
             {/* Charts Row */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-brand-surface border border-brand-paper/5 p-8 rounded-3xl">
+              <div className="bg-brand-surface border border-brand-paper/5 p-5 sm:p-8 rounded-3xl">
                 <h3 className="text-xl font-serif text-brand-paper mb-8">Stock Inventory Levels</h3>
                 <div className="h-[300px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -221,7 +221,7 @@ export const Admin = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-              <div className="bg-brand-surface border border-brand-paper/5 p-8 rounded-3xl">
+              <div className="bg-brand-surface border border-brand-paper/5 p-5 sm:p-8 rounded-3xl">
                 <h3 className="text-xl font-serif text-brand-paper mb-8">Sales Trend (Last 7 Days)</h3>
                 <div className="h-[300px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -262,7 +262,7 @@ export const Admin = () => {
             className="space-y-8"
           >
             {/* Search and Filter Bar */}
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <div className="relative flex-grow">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-paper/30" size={18} />
                 <input 
@@ -273,8 +273,8 @@ export const Admin = () => {
                   className="w-full bg-brand-surface border border-brand-paper/5 rounded-2xl pl-12 pr-4 py-4 text-brand-paper focus:border-brand-olive outline-none transition-all"
                 />
               </div>
-              <div className="flex space-x-4">
-                <div className="relative min-w-[160px]">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="relative sm:min-w-[160px]">
                   <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-paper/30" size={16} />
                   <select 
                     value={categoryFilter}
@@ -288,7 +288,7 @@ export const Admin = () => {
                 </div>
                 <button 
                   onClick={handleAdd}
-                  className="bg-brand-olive text-brand-ink px-8 py-4 rounded-2xl text-xs uppercase tracking-widest font-bold flex items-center whitespace-nowrap"
+                  className="bg-brand-olive text-brand-ink px-6 sm:px-8 py-4 rounded-2xl text-xs uppercase tracking-widest font-bold flex items-center justify-center whitespace-nowrap"
                 >
                   <Plus size={16} className="mr-2" /> Add New
                 </button>
@@ -319,7 +319,7 @@ export const Admin = () => {
                               className="w-full bg-brand-bg border border-brand-paper/10 rounded-xl px-4 py-3 text-brand-paper focus:border-brand-olive outline-none transition-colors"
                             />
                           </div>
-                          <div className="grid grid-cols-2 gap-4">
+                            <div className="grid sm:grid-cols-2 gap-4">
                             <div>
                               <label className="text-[10px] uppercase tracking-widest text-brand-paper/40 mb-2 block">Price (₹)</label>
                               <input
@@ -367,7 +367,7 @@ export const Admin = () => {
                               className="w-full bg-brand-bg border border-brand-paper/10 rounded-xl px-4 py-3 text-brand-paper focus:border-brand-olive outline-none transition-colors h-32 resize-none"
                             />
                           </div>
-                          <div className="flex justify-end space-x-4 pt-4">
+                          <div className="flex flex-wrap justify-end gap-4 pt-4">
                             <button
                               onClick={() => setEditingId(null)}
                               className="text-brand-paper/60 hover:text-brand-paper transition-colors uppercase tracking-widest text-[10px] font-bold"
@@ -446,7 +446,8 @@ export const Admin = () => {
             className="space-y-6"
           >
             <div className="bg-brand-surface border border-brand-paper/5 rounded-3xl overflow-hidden">
-              <table className="w-full text-left">
+              <div className="overflow-x-auto">
+              <table className="w-full min-w-[760px] text-left">
                 <thead>
                   <tr className="border-b border-brand-paper/5">
                     <th className="px-8 py-6 text-[10px] uppercase tracking-widest text-brand-paper/40 font-bold">Order ID</th>
@@ -497,8 +498,9 @@ export const Admin = () => {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
-            <div className="bg-brand-olive/5 border border-brand-olive/10 p-6 rounded-3xl flex items-center space-x-4">
+            <div className="bg-brand-olive/5 border border-brand-olive/10 p-5 sm:p-6 rounded-3xl flex items-center gap-4">
               <div className="p-3 bg-brand-olive/10 rounded-2xl text-brand-olive">
                 <Clock size={20} />
               </div>

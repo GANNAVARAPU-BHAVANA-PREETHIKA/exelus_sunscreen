@@ -20,18 +20,18 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex items-center justify-center px-6 pt-20">
+    <div className="min-h-screen bg-brand-bg flex items-center justify-center px-4 sm:px-6 pt-24 pb-12">
       <div className="max-w-md w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-brand-surface p-10 rounded-[2.5rem] border border-brand-paper/5 shadow-2xl"
+          className="bg-brand-surface p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-brand-paper/5 shadow-2xl"
         >
           <div className="text-center mb-10">
             <span className="text-brand-olive uppercase tracking-[0.3em] text-[10px] font-bold mb-4 block">
               {isLogin ? 'Welcome Back' : 'Join the Ritual'}
             </span>
-            <h1 className="text-4xl font-serif text-brand-paper mb-2">
+            <h1 className="text-3xl sm:text-4xl font-serif text-brand-paper mb-2">
               {isLogin ? 'Customer Login' : 'Create Account'}
             </h1>
             <p className="text-brand-paper/40 text-sm">
@@ -89,7 +89,7 @@ export const UserLogin = () => {
 
             <button
               type="submit"
-              className="w-full bg-brand-olive text-brand-ink py-5 rounded-2xl text-xs uppercase tracking-[0.3em] font-black shadow-xl shadow-brand-olive/10 hover:bg-white transition-all flex items-center justify-center group"
+              className="w-full bg-brand-olive text-brand-ink py-4 sm:py-5 rounded-2xl text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] font-black shadow-xl shadow-brand-olive/10 hover:bg-white transition-all flex items-center justify-center group"
             >
               {isLogin ? 'Sign In' : 'Create Account'}
               <ArrowRight size={18} className="ml-3 group-hover:translate-x-1 transition-transform" />
@@ -106,7 +106,7 @@ export const UserLogin = () => {
           </div>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-2 gap-4">
+        <div className="mt-8 sm:mt-12 grid sm:grid-cols-2 gap-4">
           <div className="flex items-center space-x-3 text-brand-paper/30">
             <CheckCircle2 size={16} className="text-brand-olive/40" />
             <span className="text-[10px] uppercase tracking-widest font-bold">Exclusive Offers</span>

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-brand-paper text-brand-ink pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+    <footer className="bg-brand-paper text-brand-ink pt-16 md:pt-24 pb-10 md:pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-16 md:mb-24">
           {/* Brand Column */}
           <div className="space-y-8">
             <Link to="/" className="text-3xl font-serif tracking-widest uppercase font-bold">
@@ -64,11 +64,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-brand-ink/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-[10px] uppercase tracking-widest text-brand-ink/50">
+        <div className="pt-10 md:pt-12 border-t border-brand-ink/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-[10px] uppercase tracking-widest text-brand-ink/50 leading-relaxed">
             © 2026 Exelus Skincare. All Rights Reserved.
           </p>
-          <div className="flex items-center space-x-8 text-[10px] uppercase tracking-widest text-brand-ink/50">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:gap-x-8 text-[10px] uppercase tracking-widest text-brand-ink/50">
             <span>Cruelty Free</span>
             <span>Vegan</span>
             <span>Eco-Friendly</span>

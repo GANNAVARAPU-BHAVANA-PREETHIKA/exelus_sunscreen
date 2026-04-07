@@ -6,16 +6,16 @@ export const IngredientsPage = () => {
     <div className="pt-28">
       <IngredientsSection />
       
-      <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[10px] font-bold text-brand-olive mb-4 block">
             Our Standards
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif text-brand-paper mb-6">Clean Beauty <br /><span className="italic opacity-80">Without Compromise</span></h2>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-brand-paper mb-6 leading-tight">Clean Beauty <br /><span className="italic opacity-80">Without Compromise</span></h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-brand-surface p-12 rounded-[3rem] border border-brand-paper/5">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12">
+          <div className="bg-brand-surface p-6 sm:p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-brand-paper/5">
             <h3 className="text-2xl font-serif text-brand-paper mb-6">What We Include</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-brand-paper/70">
@@ -36,7 +36,7 @@ export const IngredientsPage = () => {
               </li>
             </ul>
           </div>
-          <div className="bg-brand-surface p-12 rounded-[3rem] border border-brand-paper/5">
+          <div className="bg-brand-surface p-6 sm:p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-brand-paper/5">
             <h3 className="text-2xl font-serif text-brand-paper mb-6">What We Exclude</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-brand-paper/70 opacity-50">
